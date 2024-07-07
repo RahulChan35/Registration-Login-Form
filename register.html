@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="register.css">
+    <title>Registration Page</title>
+</head>
+<body>
+    <div id="container">
+        <div id="left-container">
+            <h1>Responsive Registration Form</h1>
+        </div>
+        <div id="form-container">
+            <h1 id="form-header">Registration Form</h1>
+            <form action="">
+                <div>
+                    <div>
+                        <label for="fullname">Full Name</label>
+                    </div>
+                    <div>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter full name" required>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div>
+                        <input type="text" id="email" name="email" placeholder="Enter email address" oninput="validateEmail(this)">
+                        <p id="emailError">not a valid email</p>
+                    </div>
+                </div>
+                <div id="form-grp-1">
+                    <div>
+                        <div>
+                            <label for="phone">Mobile Number</label>
+                        </div>
+                        <div>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Enter mobile number" oninput="validateMobile(this)">
+                            <p id="mobileError">not a valid mobile number</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="birthday">Birth Day</label>
+                        </div>
+                        <div>
+                            <input type="date" id="birthday" name="birthday" placeholder="mm-day-year" oninput="validateDate(this)">
+                            <p id="dateError">age should be atleast 10</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="form-grp-2">
+                    <label for="gender">Gender</label>
+                    <div id="gender-grp">
+                        <div>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">male</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">female</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="prefer_not_to_say" name="gender" value="prefer not to say">
+                            <label for="prefer_not_to_say">prefer_not_to_say</label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="address">Address</label>
+                    </div>
+                    <div>
+                        <input type="text" id="address" name="address" placeholder="Enter address" required>
+                    </div>
+                    <div id="address-grp">
+                        <div>
+                            <input type="text" name="country" id="country" placeholder="Country" required>
+                        </div>
+                        <div>
+                            <input type="text" name="postal_code" id="postal_code" placeholder="Enter postal code" oninput="validatePostalCode(this)">
+                            <p id="postalError">not a valid postal code</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" name="submit" id="submit" value="Submit" onclick="saveRegistrationData()">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div id="container">
+        <div id="left-container">
+            <h1>Responsive Login Form</h1>
+        </div>
+        <div id="form-container">
+            <h1 id="form-header">Login Form</h1>
+            <form action="">
+                <p id="incorrectError">Username or Password is incorrect</p>
+                <p id="notFoundError">User doesn't exist. pls sign up and try login</p>
+                <div>
+                    <div>
+                        <label for="fullname">User Name</label>
+                    </div>
+                    <div>
+                        <input type="text" id="fullname" name="fullname" placeholder="Enter full name">
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <label for="email">Email Address</label>
+                    </div>
+                    <div>
+                        <input type="text" id="email" name="email" placeholder="Enter email address" oninput="validateEmail(this)">
+                        <p id="emailError">not a valid email</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <input type="submit" name="login" id="login" value="Sign In" onclick="loginUser()">
+                    </div>
+                    <div>
+                        <input type="button" name="register" id="register" value="Sign Up">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="login.js"></script>
+</body>
+</html>
