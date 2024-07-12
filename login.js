@@ -38,7 +38,11 @@ const validateAllInpputs = () => {
 
 const loginUser = () => {
     if(validateAllInpputs() === false){
-        alert("Please provide all the details");
+        const warningContainer = document.getElementById('warning-container');
+        warningContainer.style.display = "flex";
+        setTimeout(()=>{
+            warningContainer.style.display = "none";
+        }, 2000);
     }else{
         const fname = fullname.value;
         const mail = mailId.value;
