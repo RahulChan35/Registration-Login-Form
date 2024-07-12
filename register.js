@@ -81,7 +81,11 @@ const validateAllInpputs = () => {
 
 const saveRegistrationData = () => {    
     if(validateAllInpputs() === false){
-        alert("Please provide all the details");
+        const warningContainer = document.getElementById('warning-container');
+        warningContainer.style.display = "flex";
+        setTimeout(()=>{
+            warningContainer.style.display = "none";
+        }, 2000);
     }else{
         storage.setItem("full_name", fullname.value);
         storage.setItem("email", email.value);
